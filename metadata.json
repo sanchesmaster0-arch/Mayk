@@ -1,0 +1,7 @@
+{
+  "name": "Mayk AI Chatbot",
+  "description": "A powerful and complete chatbot named Mayk, inspired by the best AI models like Claude, Gemini, ChatGPT, and DeepSeek.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

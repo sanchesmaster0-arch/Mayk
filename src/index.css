@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-zinc-900 antialiased;
+  }
+}
+
+/* Markdown Styles */
+.prose {
+  @apply text-zinc-700 leading-relaxed;
+}
+
+.prose p {
+  @apply mb-4 last:mb-0;
+}
+
+.prose code {
+  @apply bg-orange-50 px-1.5 py-0.5 rounded text-orange-600 font-mono text-[0.9em] before:content-none after:content-none;
+}
+
+.prose pre {
+  @apply bg-zinc-900 border border-zinc-800 rounded-xl p-4 my-4 overflow-x-auto text-zinc-100;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-zinc-300 text-xs;
+}
+
+.prose ul, .prose ol {
+  @apply mb-4 ml-4 space-y-1;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose a {
+  @apply text-orange-600 hover:text-orange-500 underline underline-offset-4 transition-colors;
+}
+
+.prose strong {
+  @apply text-zinc-900 font-semibold;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-zinc-900 font-bold mt-6 mb-3 first:mt-0;
+}
+
+.prose h1 { @apply text-xl; }
+.prose h2 { @apply text-lg; }
+.prose h3 { @apply text-base; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-200 rounded-full hover:bg-zinc-300 transition-colors;
+}
+
+/* Custom Gradients */
+.bg-orange-gradient {
+  @apply bg-gradient-to-br from-orange-500 to-orange-600;
+}
+
+.bg-orange-white-gradient {
+  @apply bg-gradient-to-b from-orange-50 to-white;
+}
+
+.text-orange-gradient {
+  @apply bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent;
+}
