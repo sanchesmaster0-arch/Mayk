@@ -287,7 +287,8 @@ export default function App() {
                            currentInput.toLowerCase().includes('desenhe');
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
+      const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY as string) || (process.env.GEMINI_API_KEY as string) || '';
+      const ai = new GoogleGenAI({ apiKey });
 
       if (isImageRequest) {
         setIsGeneratingImage(true);
